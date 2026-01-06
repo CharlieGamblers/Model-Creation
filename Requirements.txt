@@ -1,0 +1,21 @@
+# Core data/ML stack
+pandas>=2.0
+numpy>=1.25
+openpyxl            # Excel I/O in clean_data
+requests>=2.31
+scikit-learn>=1.4
+xgboost>=2.0
+
+# API & serving
+fastapi>=0.111          # web framework
+uvicorn[standard]>=0.29 # ASGI server (with standard extras: Cython, httptools…)
+
+# Optimisation / maths
+scipy>=1.13             # Hungarian assignment if we switch from clue
+python-multipart>=0.0.9 # handles form‑data POSTs (upload, if needed)
+
+# (optional) plotting
+matplotlib>=3.9
+
+shap>=0.45
+
