@@ -1,0 +1,35 @@
+# --- Environments / caches ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# --- Data / outputs (do not version) ---
+Data/Raw/
+Data/Processed/
+Output/
+Predictions/
+Simulation/
+Models/*.csv
+Models/*.xlsx
+Models/*.json
+Models/*.txt
+
+# --- Common export types ---
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.pkl
+*.rds
+
+# --- OS/editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Safety: never track parent folders ---
+../output/
+../Important Documents/
