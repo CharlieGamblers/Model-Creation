@@ -211,15 +211,22 @@ def main():
     print("\n=== TEAM PRIZE SUMMARY ACROSS 1000 SEASONS ===")
     print(prize_summary)
 
+
     # =========================================================
-    # 10. OPTIONAL: SAVE OUTPUTS TO CSV
+    # 10. EXPORT TO ONE EXCEL WORKBOOK (NO CSVs)
     # =========================================================
-    # Create an outputs folder if you want
-    # import os
-    # os.makedirs("outputs", exist_ok=True)
-    #
-    # team_summary.to_csv("outputs/team_summary_1000sims.csv", index=False)
-    # rider_summary.to_csv("outputs/rider_summary_1000sims.csv", index=False)
+    output_xlsx = "season_sim_1000sims.xlsx"
+
+    with pd.ExcelWriter(output_xlsx, engine="openpyxl") as writer:
+        team_summary.to_excel(writer, sheet_name="team_summary", index=False)
+        rider_summary.to_excel(writer, sheet_name="rider_summary", index=False)
+        playoff_summary.to_excel(writer, sheet_name="playoff_summary", index=False)
+        prize_summary.to_excel(writer, sheet_name="prize_summary", index=False)
+
+        # optional: also include rider earnings summary since you already compute it
+        rider_earnings_summary.to_excel(writer, sheet_name="rider_earnings", index=False)
+
+    print(f"[export] wrote Excel workbook → {output_xlsx}")
 
 
 if __name__ == "__main__":
